@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Famous Singers</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+
+/* NAVBAR */
+nav {
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background: linear-gradient(45deg, #ff4d6d, #ff8fa3);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ff4d6d;
+}
+
+/* SECTIONS */
+section {
+  padding: 70px 20px;
+}
+
+/* ABOUT */
+#about {
+  text-align: center;
+  background: linear-gradient(120deg, #ff4d6d, #ff8fa3);
+  color: white;
+}
+
+/* MEMBERS */
+#members {
+  background: rgba(0,0,0,0.5);
+}
+
+/* CARDS */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  width: 250px;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* LIKE BUTTON */
+.like-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  background: linear-gradient(45deg, #ff4d6d, #ff8fa3);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* DISCOVER */
+#discover {
+  text-align: center;
+  background: linear-gradient(120deg, #0f3460, #533483);
+}
+
+/* SOCIAL ICONS */
+.social i {
+  font-size: 28px;
+  margin: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social i:hover {
+  transform: scale(1.3);
+}
+
+/* Individual colors */
+.fa-instagram { color: #e1306c; }
+.fa-twitter { color: #1da1f2; }
+.fa-facebook { color: #1877f2; }
+.fa-youtube { color: #ff0000; }
+.fa-threads { color: #ffffff; }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <button onclick="scrollToSection('about')">About</button>
+  <button onclick="scrollToSection('members')">Members</button>
+  <button onclick="scrollToSection('discover')">Discover</button>
+</nav>
+
+<section id="about">
+  <h1>🎤 Welcome to Famous Singers Page</h1>
+  <p>Explore your favorite singers and like them!</p>
+</section>
+
+<section id="members">
+  <h2 style="text-align:center;">Members</h2>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="arjitsingh.jfif">
+      <h3>Arijit Singh</h3>
+      <p>Likes: <span id="like1">0</span></p>
+      <button class="like-btn" onclick="like(1)">❤️ Like</button>
+    </div>
+
+    <div class="card">
+      <img src="shreyagoshal.jfif">
+      <h3>Shreya Ghoshal</h3>
+      <p>Likes: <span id="like2">0</span></p>
+      <button class="like-btn" onclick="like(2)">❤️ Like</button>
+    </div>
+
+    <div class="card">
+      <img src="sidsriram.jpg">
+      <h3>Sid Sriram</h3>
+      <p>Likes: <span id="like3">0</span></p>
+      <button class="like-btn" onclick="like(3)">❤️ Like</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="discover">
+  <h2>Discover More</h2>
+  <p>Connect with singers on social platforms</p>
+
+  <div class="social">
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-youtube"></i>
+    <i class="fab fa-threads"></i>
+  </div>
+</section>
+
+<script>
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+let likes = {1:0, 2:0, 3:0};
+
+function like(id) {
+  likes[id]++;
+  document.getElementById("like" + id).innerText = likes[id];
+}
+</script>
+
+</body>
+</html>
