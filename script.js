@@ -1,0 +1,16 @@
+function append(value) {
+  document.getElementById("display").value += value;
+}
+
+function clearDisplay() {
+  document.getElementById("display").value = "";
+}
+
+function calculate() {
+  let exp = document.getElementById("display").value;
+  try {
+    document.getElementById("display").value = eval(exp);
+  } catch {
+    document.getElementById("display").value = "Error";
+  }
+}
